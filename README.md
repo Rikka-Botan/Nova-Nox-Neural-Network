@@ -5,7 +5,7 @@
 
 ## About
 
-N4: Nova-Nox-Neural-Network is N4 is a mechanism designed to enhance accuracy by integrating the self-referential capabilities of the Attention mechanism with a simplified version of the selective copying architecture inspired by S6, thereby enabling the acquisition of a more expressive QK matrix. 
+N4: Nova-Nox-Neural-Network is a mechanism designed to enhance accuracy by integrating the self-referential capabilities of the Attention mechanism with a simplified version of the selective copying architecture inspired by S6, thereby enabling the acquisition of a more expressive QK matrix. 
 
 The architecture employs ASGG: Adaptive Swish-GELU Gating as the activation function within its MLP components, contributing to richer representational capacity. 
 
