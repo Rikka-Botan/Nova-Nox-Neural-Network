@@ -23,6 +23,8 @@ This repository provides a simplified implementation of N4, and it can be readil
 
 3. DyT: Dynamic Tanh Normalization
 
+***
+
 ## Implemenation and License
 
 This repository is official pure pytorch implementation.
@@ -32,6 +34,75 @@ Licensed under ["MIT License"](https://mit-license.org/).
 Commercial use permitted
 
 ## How to use
+
+- Clone the repository
+
+```bash
+git clone https://github.com/Rikka-Botan/Nova-Nox-Neural-Network.git
+```
+
+
+- Import necessary libraries
+
+```python
+import torch
+from torch import nn
+import torch.nn.functional as F
+from model.N4_modeling import N4C
+```
+
+
+- Model create
+
+```python
+"""
+Args:
+hidden_size: int - model hidden size,
+inter_size: int - model mlp intermediate size,
+vocab_size : int - tokenizer vocab num,
+heads: int - heads num,
+layers: int - N4D(Decoder) layers num
+"""
+
+hidden_size = 768
+intermediate_size = 3072
+vocab_size = 32064
+heads = 6
+layers = 6
+
+model = N4C(
+  hidden_size,
+  intermediate_size,
+  vocab_size,
+  heads,
+  layers
+)
+output = model(tokenized_text)
+```
+
+
+## How to Train
+
+- training code
+
+```python
+from torch.optim import AdamW
+
+optimizer = AdamW(
+  model.parameters(),
+  lr=2.0e-4,
+  betas=(0.9, 0.95),
+  eps=1e-8,
+  weight_decay=1e-4
+)
+
+for batch in dataloader:
+  optimizer.zero_grad()
+  batch = batch.to(device)
+  loss = model.to(device)(input=batch, labels=batch)[1]
+  loss.backward()
+  optimizer.step()
+```
 
 
 
