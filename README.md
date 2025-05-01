@@ -90,10 +90,10 @@ from torch.optim import AdamW
 
 optimizer = AdamW(
   model.parameters(),
-  lr=2.0e-4,
+  lr=6.0e-4,
   betas=(0.9, 0.95),
   eps=1e-8,
-  weight_decay=1e-4
+  weight_decay=1e-1
 )
 
 for batch in dataloader:
