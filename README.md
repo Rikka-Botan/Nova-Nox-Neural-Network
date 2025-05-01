@@ -3,19 +3,25 @@
 
 # Nova-Nox-Neural-Network
 
-***
-
 ## About
 
-N4: Nova-Nox-Neural-Network is a mechanism designed to enhance model accuracy by integrating the self-referential capabilities of the Attention mechanism with a selective copying mechanism similar to that of S6, thereby enabling the acquisition of a more expressive QK matrix. 
+N4: Nova-Nox-Neural-Network is N4 is a mechanism designed to enhance accuracy by integrating the self-referential capabilities of the Attention mechanism with a simplified version of the selective copying architecture inspired by S6, thereby enabling the acquisition of a more expressive QK matrix. 
 
-The architecture employs ASGG as the activation function within the MLP, contributing to increased representational capacity. 
+The architecture employs ASGG: Adaptive Swish-GELU Gating as the activation function within its MLP components, contributing to richer representational capacity. 
 
-Additionally, DyT is used for normalization, improving computational efficiency.
+Furthermore, it utilizes DyT for normalization, which improves computational efficiency. 
 
-This repository provides a simplified implementation of N4, which can be readily integrated with modern Attention architectures such as SWA, GQA, and MLA.
+This repository provides a simplified implementation of N4, and it can be readily integrated with recent Attention-based architectures such as SWA, GQA, and MLA.
 
 ***
+
+### Key Features
+
+1. A simplified Selective copying mechanism
+
+2. ASGG: Adaptive Swish-GELU Gating + MLP
+
+3. DyT: Dynamic Tanh Normalization
 
 ## Implemenation and License
 
