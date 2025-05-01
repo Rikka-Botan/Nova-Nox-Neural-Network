@@ -27,7 +27,7 @@ This repository provides a simplified implementation of N4, and it can be readil
 
 ***
 
-## Implemenation and License
+## Implementation and License
 
 This repository is official pure pytorch implementation.
 
