@@ -3,6 +3,8 @@
 
 # Nova-Nox-Neural-Network
 
+All images used and code in this repository are created by Rikka Botan.
+
 ## About
 
 N4: Nova-Nox-Neural-Network is a mechanism designed to enhance accuracy by integrating the self-referential capabilities of the Attention mechanism with a simplified version of the selective copying architecture inspired by S6, thereby enabling the acquisition of a more expressive QK matrix. 
