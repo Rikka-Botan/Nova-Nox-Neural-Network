@@ -5,6 +5,10 @@
 
 All images used and code in this repository are created by Rikka Botan.
 
+Flash Technical Report (Japanese)
+
+https://qiita.com/peony_snow/items/8ae4e83b8de5c342ab62
+
 ## About
 
 N4: Nova-Nox-Neural-Network is a mechanism designed to enhance accuracy by integrating the self-referential capabilities of the Attention mechanism with a simplified version of the selective copying architecture inspired by S6, thereby enabling the acquisition of a more expressive QK matrix. 
@@ -26,6 +30,18 @@ This repository provides a simplified implementation of N4, and it can be readil
 3. DyT: Dynamic Tanh Normalization
 
 ***
+
+N4: Nova Nox Neural Network QK Matrix is below.
+
+```math
+\displaylines{
+scale = [1, \cdots, n] \\
+Matrix_{ij} = \frac{W_Q x_i\biggl(\frac{\sum_{k=1}^j scale_k W_g x_k W_K x_k}{scale_j^2}\biggl)^T}{\sqrt{d}} 
+}
+```
+
+![image](https://github.com/user-attachments/assets/2e549a00-4406-4b56-98bd-d1727dd7b738)
+
 
 ## Implementation and License
 
@@ -106,7 +122,49 @@ for batch in dataloader:
   optimizer.step()
 ```
 
+- inference
 
+```python: N4C_inference
+# N4: Nova Nox Neural Network inference
+# coding=utf-8
+# Copyright 2025 Rikka Botan. All rights reserved
+# Licensed under the "MIT License"
+
+import torch
+from transformers import AutoTokenizer
+import os
+from model.n4_modeling import N4C
+
+model_name = "any model"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+cwd=os.path.abspath('your model path')
+model = N4C(
+    vocab_size=any,
+    hidden_size=768,
+    inter_size=1536,
+    heads=6,
+    layers=18,
+    bias=False
+)
+state_dict = torch.load(os.path.join(cwd, 'any.bin'), weights_only=True)
+model.load_state_dict(state_dict, strict=False)
+model = model.to('cpu')
+model.eval()
+text = "Large Language Models (LLMs) are advanced artificial intelligence systems designed to"
+inputs = tokenizer(text, return_tensors='pt')
+output = model.generate_n4c(
+    input_ids=inputs["input_ids"].to('cpu'),
+    max_new_tokens=128
+    temperature: float = 0.7,
+    top_k: int = 10,
+    top_p: float = 0.7,
+    eos_token_id: int = 2)
+for token in inputs['input_ids']:
+    print(tokenizer.decode(token), end=" ")
+for token in output:
+    print(tokenizer.decode(token), end=" ", flush=True)
+
+```
 
 ## Acknowledgements
 
