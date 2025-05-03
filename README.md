@@ -40,6 +40,20 @@ Matrix_{ij} = \frac{W_Q x_i\biggl(\frac{\sum_{k=1}^j scale_k W_g x_k W_K x_k}{sc
 }
 ```
 
+## training result
+
+```bash
+Training Setting
+Parameters：127M
+(vocab_size=32768, hidden_size=768, inter_size=1536, heads=6, layers=18)
+Optimizer: AdamW
+(lr=6e-4, betas=(0.9, 0.95), eps=1e-9, weight_decay=1e-1, warmup_steps=2000)
+batch size: 8
+accumlation: 16
+dataset: fineweb (0.5B token, 1 epoch: 976 steps)
+max length: 512
+dtype: bfloat16
+```
 ![image](https://github.com/user-attachments/assets/2e549a00-4406-4b56-98bd-d1727dd7b738)
 
 
