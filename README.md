@@ -122,9 +122,11 @@ for batch in dataloader:
   optimizer.step()
 ```
 
-- inference
+## How to inference
 
-```python: N4C_inference
+- inference code
+
+```python
 # N4: Nova Nox Neural Network inference
 # coding=utf-8
 # Copyright 2025 Rikka Botan. All rights reserved
