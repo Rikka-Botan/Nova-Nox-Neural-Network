@@ -56,6 +56,9 @@ dtype: bfloat16
 ```
 ![image](https://github.com/user-attachments/assets/0f294c4a-6331-4576-ba10-5936fd1bbb87)
 
+Test model is here
+
+https://huggingface.co/RikkaBotan/Nova-Nox-Neural-Network_test_127m_0.5B_fineweb
 
 ## Implementation and License
 
