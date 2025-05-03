@@ -54,7 +54,7 @@ dataset: fineweb (0.5B token, 1 epoch: 976 steps)
 max length: 512
 dtype: bfloat16
 ```
-![image](https://github.com/user-attachments/assets/2e549a00-4406-4b56-98bd-d1727dd7b738)
+![image](https://github.com/user-attachments/assets/0f294c4a-6331-4576-ba10-5936fd1bbb87)
 
 
 ## Implementation and License
