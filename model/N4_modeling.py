@@ -20,8 +20,6 @@ class BotanDyT(nn.Module):
         ## DyT Normalization for Nova Nox
 
         hidden_size: int
-
-        eps: float (default: 1e-5)
         """
         super().__init__()
         self.weight = nn.Parameter(
